@@ -23,6 +23,9 @@ class Account
     #[ORM\JoinColumn(nullable: false)]
     private ?Customer $owner = null;
 
+    #[ORM\Column(length: 3)]
+    private ?string $currency = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Account
     public function setOwner(?Customer $owner): static
     {
         $this->owner = $owner;
+
+        return $this;
+    }
+
+    public function getCurrency(): ?string
+    {
+        return $this->currency;
+    }
+
+    public function setCurrency(string $currency): static
+    {
+        $this->currency = $currency;
 
         return $this;
     }
