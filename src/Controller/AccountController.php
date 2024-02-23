@@ -25,7 +25,7 @@ class AccountController extends AbstractController
     {
         // $accounts
         return $this->json([
-            'input' => $id,
+            'input' => $customer_id,
         ]);
     }
 

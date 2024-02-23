@@ -16,7 +16,7 @@ class Account
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $account_number = null;
+    private ?string $account_number = null; // this should be unique
 
     #[ORM\Column]
     private ?int $balance = null;
@@ -61,6 +61,13 @@ class Account
     public function setBalance(int $balance): static
     {
         $this->balance = $balance;
+
+        return $this;
+    }
+
+    public function calculateBalance(): static
+    {
+        $transaction = $this->getTransactions();
 
         return $this;
     }

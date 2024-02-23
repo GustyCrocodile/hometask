@@ -21,7 +21,7 @@ class Customer
     #[ORM\Column(length: 255)]
     private ?string $last_name = null;
 
-    #[ORM\OneToMany(targetEntity: Account::class, mappedBy: 'owner', orphanRemoval: false)]
+    #[ORM\OneToMany(targetEntity: Account::class, mappedBy: 'owner')]
     private Collection $accounts;
 
     public function __construct()
