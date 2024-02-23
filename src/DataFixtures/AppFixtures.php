@@ -33,7 +33,7 @@ class AppFixtures extends Fixture
         $customer3->setLastName($this->faker->lastName);
 
         $account1 = new Account();
-        $account1->setAccountNumber("LV30YZNR7W0SRLH9313R0");
+        $account1->setIban("LV30YZNR7W0SRLH9313R0");
         $account1->setBalance(0); // 1230
         $account1->setCurrency("USD");
         $account1->setOwner($customer1);
@@ -55,13 +55,13 @@ class AppFixtures extends Fixture
 
         // accounts for customer1
         $account2 = new Account();
-        $account2->setAccountNumber("LV38ZZGUXK6WTPPBA8045");
+        $account2->setIban("LV38ZZGUXK6WTPPBA8045");
         $account2->setBalance(0); // 5500
         $account2->setCurrency("EUR");
         $account2->setOwner($customer1);
 
         $account3 = new Account();
-        $account3->setAccountNumber("LV78ZIDM87IV111DOBH9R");
+        $account3->setIban("LV78ZIDM87IV111DOBH9R");
         $account3->setBalance(0); // 3022
         $account3->setCurrency("EUR");
         $account3->setOwner($customer1);
@@ -76,13 +76,13 @@ class AppFixtures extends Fixture
 
         // account for customer 2
         $account4 = new Account();
-        $account4->setAccountNumber("LV21JVML6APO7Y874E57Z");
+        $account4->setIban("LV21JVML6APO7Y874E57Z");
         $account4->setBalance(0);
         $account4->setCurrency("EUR");
         $account4->setOwner($customer2);
 
         $account5 = new Account();
-        $account5->setAccountNumber("GB58KWBT97408179021481");
+        $account5->setIban("GB58KWBT97408179021481");
         $account5->setBalance(0);
         $account5->setCurrency("GBP");
         $account5->setOwner($customer2);

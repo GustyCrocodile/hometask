@@ -15,8 +15,8 @@ class Account
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $account_number = null; // this should be unique
+//    #[ORM\Column(length: 255)]
+//    private ?string $account_number = null;
 
     #[ORM\Column]
     private ?int $balance = null;
@@ -31,6 +31,9 @@ class Account
     #[ORM\OneToMany(targetEntity: Transaction::class, mappedBy: 'creditor')]
     private Collection $transactions;
 
+    #[ORM\Column(length: 255, unique: true)]
+    private ?string $iban = null;
+
     public function __construct()
     {
         $this->transactions = new ArrayCollection();
@@ -41,17 +44,29 @@ class Account
         return $this->id;
     }
 
-    public function getAccountNumber(): ?string
+    public function getIban(): ?string
     {
-        return $this->account_number;
+        return $this->iban;
     }
 
-    public function setAccountNumber(string $account_number): static
+    public function setIban(string $iban): static
     {
-        $this->account_number = $account_number;
+        $this->iban = $iban;
 
         return $this;
     }
+
+//    public function getAccountNumber(): ?string
+//    {
+//        return $this->account_number;
+//    }
+//
+//    public function setAccountNumber(string $account_number): static
+//    {
+//        $this->account_number = $account_number;
+//
+//        return $this;
+//    }
 
     public function getBalance(): ?int
     {
