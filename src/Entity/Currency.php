@@ -8,27 +8,29 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: CurrencyRepository::class)]
 class Currency
 {
-    #[ORM\Id]
+//    #[ORM\Id]
 //    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+//    #[ORM\Column]
+//    private ?int $id = null;
+
+//    public function getId(): ?string
+//    {
+//        return $this->code;
+//    }
 
     #[ORM\Column(length: 3)]
-    private ?string $code = null;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "NONE")]
+    private ?string $currency = null;
 
     public function getCode(): ?string
     {
-        return $this->code;
+        return $this->currency;
     }
 
-    public function setCode(string $code): static
+    public function setCode(string $currency): static
     {
-        $this->code = $code;
+        $this->currency = $currency;
 
         return $this;
     }

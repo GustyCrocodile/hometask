@@ -8,10 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: AccountRepository::class)]
 class Account
 {
+//    #[ORM\Id]
+//    #[ORM\GeneratedValue]
+//    #[ORM\Column]
+//    private ?int $id = null;
+
+    #[ORM\Column(length: 34)]
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    private ?string $account_no = null;
 
     #[ORM\Column(length: 255)]
     private ?string $last_name = null;
@@ -23,9 +27,9 @@ class Account
     #[ORM\JoinColumn(nullable: false)]
     private ?Client $owner = null;
 
-    public function getId(): ?int
+    public function getAccountNo(): ?string
     {
-        return $this->id;
+        return $this->account_no;
     }
 
     public function getLastName(): ?string

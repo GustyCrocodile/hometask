@@ -8,16 +8,15 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: TransactionTypeRepository::class)]
 class TransactionType
 {
-    #[ORM\Column(name: "code", type: "string", length: "1", nullable: "false")]
+    #[ORM\Column(length: "1")]
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: "NONE")]
-
     private ?string $code = null;
 
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    public function getCode(): ?int
+    public function getCode(): ?string
     {
         return $this->code;
     }
