@@ -27,6 +27,10 @@ class Account
     #[ORM\JoinColumn(nullable: false)]
     private ?Client $owner = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(referencedColumnName: 'currency', nullable: false)]
+    private ?Currency $currency = null;
+
     public function getAccountNo(): ?string
     {
         return $this->account_no;
@@ -64,6 +68,18 @@ class Account
     public function setOwner(?Client $owner): static
     {
         $this->owner = $owner;
+
+        return $this;
+    }
+
+    public function getCurrency(): ?Currency
+    {
+        return $this->currency;
+    }
+
+    public function setCurrency(?Currency $currency): static
+    {
+        $this->currency = $currency;
 
         return $this;
     }
