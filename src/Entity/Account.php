@@ -42,6 +42,8 @@ class Account
 
     public function setAccountNo(string $account_no): ?string
     {
+        $this->account_no = $account_no;
+
         return $this->account_no;
     }
 
