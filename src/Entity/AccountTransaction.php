@@ -25,11 +25,11 @@ class AccountTransaction
     private ?Currency $currency = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(name: 'debtor', referencedColumnName: 'account_no', nullable: false)]
+    #[ORM\JoinColumn(name: 'debtor', nullable: false)]
     private ?Account $debtor = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(name: 'creditor', referencedColumnName: 'account_no', nullable: false)]
+    #[ORM\JoinColumn(name: 'creditor', nullable: false)]
     private ?Account $creditor = null;
 
     public function getId(): ?int

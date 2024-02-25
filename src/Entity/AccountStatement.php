@@ -15,7 +15,7 @@ class AccountStatement
     private ?int $id = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(referencedColumnName: 'account_no', nullable: false)]
+    #[ORM\JoinColumn(nullable: false)]
     private ?Account $account = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]

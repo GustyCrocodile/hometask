@@ -23,12 +23,12 @@ class Currency
     #[ORM\GeneratedValue(strategy: "NONE")]
     private ?string $currency = null;
 
-    public function getCode(): ?string
+    public function getCurrency(): ?string
     {
         return $this->currency;
     }
 
-    public function setCode(string $currency): static
+    public function setCurrency(string $currency): static
     {
         $this->currency = $currency;
 

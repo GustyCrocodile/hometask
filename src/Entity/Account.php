@@ -8,13 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: AccountRepository::class)]
 class Account
 {
-//    #[ORM\Id]
-//    #[ORM\GeneratedValue]
-//    #[ORM\Column]
-//    private ?int $id = null;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
     #[ORM\Column(length: 34)]
-    #[ORM\Id]
     private ?string $account_no = null;
 
     #[ORM\Column(length: 255)]
@@ -31,7 +30,17 @@ class Account
     #[ORM\JoinColumn(referencedColumnName: 'currency', nullable: false)]
     private ?Currency $currency = null;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
     public function getAccountNo(): ?string
+    {
+        return $this->account_no;
+    }
+
+    public function setAccountNo(string $account_no): ?string
     {
         return $this->account_no;
     }
