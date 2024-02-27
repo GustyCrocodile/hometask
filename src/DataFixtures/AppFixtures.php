@@ -17,9 +17,11 @@ class AppFixtures extends Fixture
         CurrencyFactory::createOne(['currency' => 'USD']);
         CurrencyFactory::createOne(['currency' => 'EUR']);
         CurrencyFactory::createOne(['currency' => 'GBP']);
+
+
         ClientFactory::createMany(3);
         AccountFactory::createMany(5);
-//        AccountTransactionFactory::createMany(10);
+        AccountTransactionFactory::createMany(10);
         //AccountStatementFactory::createMany(10);
 
         // $manager->flush();
