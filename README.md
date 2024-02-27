@@ -1,10 +1,18 @@
 # PHP Home task
+This project is for the Mintos home assignment, built with the Symfony framework.
+This project does not have a containers.  
+
+Functional requirements met:
+- Return list of accounts by client id
+- Return list of transaction by account id (broken) 
+
+Non-functional requirements met:
+- DB schema versioning
 
 
 ## Setup
-
 ### Requirements
-- PHP 8.2 or higher with these extensions (ctype, iconv, PCRE, Session, SimpleXML, and Tokenizer)
+- PHP 8.2 or higher with these extensions (ctype, iconv, pcre, session, SimpleXML, and Tokenizer)
 - Composer
 
 ### Clone the project
