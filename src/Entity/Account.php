@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AccountRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Ignore;
 
 #[ORM\Entity(repositoryClass: AccountRepository::class)]
 class Account
@@ -24,6 +25,7 @@ class Account
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
+    #[Ignore]
     private ?Client $owner = null;
 
     #[ORM\ManyToOne]

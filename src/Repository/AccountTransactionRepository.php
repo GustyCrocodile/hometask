@@ -24,17 +24,16 @@ class AccountTransactionRepository extends ServiceEntityRepository
     //    /**
     //     * @return AccountTransaction[] Returns an array of AccountTransaction objects
     //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('a.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+        public function findByAccount($value): array
+        {
+            return $this->createQueryBuilder('a')
+                ->andWhere('a.debtor = :val or a.creditor = :val')
+                ->setParameter('val', $value)
+                ->orderBy('a.datetime', 'DESC')
+                ->getQuery()
+                ->getResult()
+            ;
+        }
 
     //    public function findOneBySomeField($value): ?AccountTransaction
     //    {
